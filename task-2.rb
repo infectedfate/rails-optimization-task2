@@ -43,8 +43,10 @@ def collect_stats_from_users(report, users_objects, &block)
   end
 end
 
-def work
-  file_lines = File.read('data.txt').split("\n")
+def work(gc_disable = true)
+  GC.disable if gc_disable
+
+  file_lines = File.read('data200.txt').split("\n")
 
   users = []
   sessions = []
