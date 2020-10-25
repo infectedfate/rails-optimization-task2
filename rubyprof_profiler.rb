@@ -1,10 +1,10 @@
 require 'ruby-prof'
-require_relative 'task-2.rb'
+require_relative 'task-2-ref.rb'
 
 RubyProf.measure_mode = RubyProf::ALLOCATIONS
 
 result = RubyProf.profile do
-  ReportGenerator.new.work(gc_disable: false)
+  ReportGenerator.new.work(gc_disable: true)
 end
 
 printer = RubyProf::FlatPrinter.new(result)

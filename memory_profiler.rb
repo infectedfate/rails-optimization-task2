@@ -3,7 +3,7 @@ require_relative 'task-2-ref.rb'
 # require_relative 'task-2.rb'
 
 report = MemoryProfiler.report do
-  ReportGenerator.new.work(gc_disable: false)
+  ReportGenerator.new.work(gc_disable: true)
 end
 
 report.pretty_print(scale_bytes: true)
